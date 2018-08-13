@@ -30,6 +30,12 @@
 			touch-action: none;
 			background-color: #445a71;position: relative;
 		}
+		.info { 
+			padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; 
+		} 
+		.info h4 { 
+			margin: 0 0 5px; color: #777;
+		}
     </style>
 </head>
 <body>
@@ -52,6 +58,15 @@
 				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 			id: 'mapbox.streets'
 		}).addTo(mymap);
+
+		var info = L.control();
+		info.onAdd = function (mymap) {
+			this._div = L.DomUtil.create('div', 'info');
+			this._div.innerHTML = '<a href="http://misimerahputih.id/cerita/" style="text-decoration:none;"><h4>Baca Cerita</h4></a>' ;
+			return this._div;
+		};
+		info.addTo(mymap);
+
 
 		L.marker([-7.262539, 112.743403], {icon: myIcon}).addTo(mymap)
 			.bindPopup("<center><img src='foto/jawa_timur/cover.jpg' width='200' style='border-top-left-radius: 12px;border-top-right-radius: 12px;'><br /><b>Surabaya, Jawa Timur</b><br />2017</center>");
