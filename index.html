@@ -30,10 +30,10 @@
 			touch-action: none;
 			background-color: #445a71;position: relative;
 		}
-		.info { 
+		.info,.instagram,.twitter { 
 			padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; 
 		} 
-		.info h4 { 
+		.info h4,.instagram h4,.twitter h4 { 
 			margin: 0 0 5px; color: #777;
 		}
     </style>
@@ -62,10 +62,26 @@
 		var info = L.control();
 		info.onAdd = function (mymap) {
 			this._div = L.DomUtil.create('div', 'info');
-			this._div.innerHTML = '<a href="http://misimerahputih.id/cerita/index.html" style="text-decoration:none;"><h4>Baca Cerita</h4></a>' ;
+			this._div.innerHTML = '<a href="http://misimerahputih.id/cerita" style="text-decoration:none;"><h4>Baca Cerita</h4></a>' ;
 			return this._div;
 		};
 		info.addTo(mymap);
+
+		var instagram = L.control();
+		instagram.onAdd = function (mymap) {
+			this._div = L.DomUtil.create('div', 'instagram');
+			this._div.innerHTML = '<a href="https://www.instagram.com/misimerahputih" style="text-decoration:none;"><h4>Instagram</h4></a>' ;
+			return this._div;
+		};
+		instagram.addTo(mymap);
+
+		var twitter = L.control();
+		twitter.onAdd = function (mymap) {
+			this._div = L.DomUtil.create('div', 'twitter');
+			this._div.innerHTML = '<a href="https://www.twitter.com/misimerahputih" style="text-decoration:none;"><h4>Twitter</h4></a>' ;
+			return this._div;
+		};
+		twitter.addTo(mymap);
 
 
 		L.marker([-7.262539, 112.743403], {icon: myIcon}).addTo(mymap)
