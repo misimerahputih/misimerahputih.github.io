@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124232792-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-124232792-1');
+	</script>
+
 	<title>Misi Merah Putih - Misi Mengikuti Upacara 17 Agustus di 34 Ibukota Provinsi se-Indonesia</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,12 +55,6 @@
 	<script>
 		var mymap = L.map('myMap').setView([-2.600029, 118.015776], 5);
 
-		var myIcon = L.icon({
-		    iconUrl: 'marker.png',
-		    iconSize: [40, 44],
-		    popupAnchor: [0, -15],	
-		});
-
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -83,9 +87,16 @@
 		};
 		twitter.addTo(mymap);
 
-
+		var myIcon = L.icon({
+		    iconUrl: 'marker.png',
+		    iconSize: [40, 44],
+		    popupAnchor: [0, -15],	
+		});
 		L.marker([-7.262539, 112.743403], {icon: myIcon}).addTo(mymap)
 			.bindPopup("<center><img src='foto/jawa_timur/cover.jpg' width='200' style='border-top-left-radius: 12px;border-top-right-radius: 12px;'><br /><b>Surabaya, Jawa Timur</b><br />2017</center>");
+
+		L.marker([-5.144100, 119.415788], {icon: myIcon}).addTo(mymap)
+			.bindPopup("<center><img src='foto/sulawesi_selatan/cover.jpg' width='200' style='border-top-left-radius: 12px;border-top-right-radius: 12px;'><br /><b>Makassar, Sulawesi Selatan</b><br />2018</center>");
 	</script>
 </body>
 </html>
